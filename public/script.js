@@ -115,7 +115,9 @@ const translations = {
     form_btn_sending: "Enviando mensaje...",
     form_success: "✓ ¡Gracias por tu mensaje! Tu consulta fue enviada exitosamente a <strong>silsaki@gmail.com</strong>. Te responderé a la brevedad.",
     form_error: "Hubo un inconveniente al enviar el mensaje. Puedes enviarlo directamente haciendo clic en <a href='mailto:silsaki@gmail.com' style='text-decoration: underline; font-weight: bold;'>silsaki@gmail.com</a> o por WhatsApp.",
-    footer_rights: "© 2026 Silvana Sasaki. Todos los derechos reservados."
+    footer_rights: "© 2026 Silvana Sasaki. Todos los derechos reservados.",
+    theme_btn_to_day: "Modo Día",
+    theme_btn_to_night: "Modo Noche"
   },
   en: {
     page_title: "Silvana Sasaki | Commercial Engineer & Business Consulting",
@@ -228,29 +230,35 @@ const translations = {
     form_btn_sending: "Sending message...",
     form_success: "✓ Thank you for your message! Your inquiry was successfully delivered to <strong>silsaki@gmail.com</strong>. I will reply shortly.",
     form_error: "There was an issue sending your message. You can reach out directly via <a href='mailto:silsaki@gmail.com' style='text-decoration: underline; font-weight: bold;'>silsaki@gmail.com</a> or WhatsApp.",
-    footer_rights: "© 2026 Silvana Sasaki. All rights reserved."
+    footer_rights: "© 2026 Silvana Sasaki. All rights reserved.",
+    theme_btn_to_day: "Day Mode",
+    theme_btn_to_night: "Night Mode"
   }
 };
 
 /* ==========================================================================
-   State & Storage
+   State & Storage (Noche es el modo por defecto)
    ========================================================================== */
 let currentLang = localStorage.getItem('silsaki_lang') || 'es';
-let currentTheme = localStorage.getItem('silsaki_theme') || 'dark'; // Noche el actual (Default)
+let currentTheme = localStorage.getItem('silsaki_theme') || 'dark';
 
 /* ==========================================================================
-   Language Switching Logic
+   Global Functions (Garantía de funcionamiento inmediato)
    ========================================================================== */
-function applyLanguage(lang) {
+window.silsakiSetLanguage = function(lang) {
   if (!translations[lang]) lang = 'es';
   currentLang = lang;
-  localStorage.setItem('silsaki_lang', lang);
+  try {
+    localStorage.setItem('silsaki_lang', lang);
+  } catch (e) {
+    console.warn("Storage no disponible", e);
+  }
   document.documentElement.lang = lang;
 
   // Actualizar todos los elementos con data-i18n
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (translations[lang][key]) {
+    if (translations[lang] && translations[lang][key]) {
       el.innerHTML = translations[lang][key];
     }
   });
@@ -258,7 +266,7 @@ function applyLanguage(lang) {
   // Actualizar placeholders con data-i18n-placeholder
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
-    if (translations[lang][key]) {
+    if (translations[lang] && translations[lang][key]) {
       el.setAttribute('placeholder', translations[lang][key]);
     }
   });
@@ -275,75 +283,83 @@ function applyLanguage(lang) {
   // Actualizar botones de idioma activo
   const btnEs = document.getElementById('btn-lang-es');
   const btnEn = document.getElementById('btn-lang-en');
-  if (btnEs && btnEn) {
-    btnEs.classList.toggle('active', lang === 'es');
-    btnEn.classList.toggle('active', lang === 'en');
-  }
+  if (btnEs) btnEs.classList.toggle('active', lang === 'es');
+  if (btnEn) btnEn.classList.toggle('active', lang === 'en');
 
-  // Actualizar accesibilidad de Theme Toggle
-  const themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle) {
-    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-    const label = isDark 
-      ? (lang === 'es' ? 'Cambiar a modo día' : 'Switch to day mode')
-      : (lang === 'es' ? 'Cambiar a modo noche' : 'Switch to night mode');
-    themeToggle.setAttribute('aria-label', label);
-    themeToggle.setAttribute('title', isDark ? 'Modo Día' : 'Modo Noche');
-  }
-}
+  // Actualizar etiqueta del botón de tema
+  updateThemeButtonUI();
+};
 
-/* ==========================================================================
-   Theme Switching Logic (Día / Noche)
-   ========================================================================== */
-function applyTheme(theme) {
+window.silsakiToggleTheme = function() {
+  const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  const newTheme = activeTheme === 'light' ? 'dark' : 'light';
+  window.silsakiApplyTheme(newTheme);
+};
+
+window.silsakiApplyTheme = function(theme) {
   currentTheme = theme;
-  localStorage.setItem('silsaki_theme', theme);
+  try {
+    localStorage.setItem('silsaki_theme', theme);
+  } catch (e) {
+    console.warn("Storage no disponible", e);
+  }
   document.documentElement.setAttribute('data-theme', theme);
+  updateThemeButtonUI();
+};
 
+function updateThemeButtonUI() {
   const themeToggle = document.getElementById('theme-toggle');
+  const themeLabel = document.getElementById('theme-btn-label');
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+  if (themeLabel) {
+    themeLabel.textContent = isLight 
+      ? (translations[currentLang].theme_btn_to_night || 'Modo Noche')
+      : (translations[currentLang].theme_btn_to_day || 'Modo Día');
+  }
+
   if (themeToggle) {
-    const isDark = theme === 'dark';
-    const label = isDark 
-      ? (currentLang === 'es' ? 'Cambiar a modo día' : 'Switch to day mode')
-      : (currentLang === 'es' ? 'Cambiar a modo noche' : 'Switch to night mode');
+    const label = isLight 
+      ? (currentLang === 'es' ? 'Cambiar a modo noche' : 'Switch to night mode')
+      : (currentLang === 'es' ? 'Cambiar a modo día' : 'Switch to day mode');
     themeToggle.setAttribute('aria-label', label);
-    themeToggle.setAttribute('title', isDark ? 'Modo Día' : 'Modo Noche');
+    themeToggle.setAttribute('title', label);
   }
 }
 
 /* ==========================================================================
-   Inicialización DOM
+   Inicialización Automática e Inmediata
    ========================================================================== */
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Aplicar tema y lenguaje iniciales
-  applyTheme(currentTheme);
-  applyLanguage(currentLang);
+function initSilsaki() {
+  // Aplicar estado inicial
+  window.silsakiApplyTheme(currentTheme);
+  window.silsakiSetLanguage(currentLang);
 
-  // 2. Listeners de idioma
+  // Listeners de botones de idioma
   const btnEs = document.getElementById('btn-lang-es');
   const btnEn = document.getElementById('btn-lang-en');
-  if (btnEs) btnEs.addEventListener('click', () => applyLanguage('es'));
-  if (btnEn) btnEn.addEventListener('click', () => applyLanguage('en'));
-
-  // 3. Listener de tema (Día / Noche)
-  const themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const activeTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = activeTheme === 'light' ? 'dark' : 'light';
-      applyTheme(newTheme);
-    });
+  if (btnEs) {
+    btnEs.onclick = () => window.silsakiSetLanguage('es');
+  }
+  if (btnEn) {
+    btnEn.onclick = () => window.silsakiSetLanguage('en');
   }
 
-  // 4. Mobile Nav Toggle
+  // Listener del botón de tema
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.onclick = () => window.silsakiToggleTheme();
+  }
+
+  // Mobile Nav Toggle
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link, .btn-nav');
 
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
+    mobileToggle.onclick = () => {
       navMenu.classList.toggle('active');
-    });
+    };
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -352,40 +368,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Sticky navbar con sombras según scroll
+  // Sticky navbar con sombras según scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar.style.boxShadow = 'var(--shadow-md)';
-    } else {
-      navbar.style.boxShadow = 'none';
+    if (navbar) {
+      if (window.scrollY > 20) {
+        navbar.style.boxShadow = 'var(--shadow-md)';
+      } else {
+        navbar.style.boxShadow = 'none';
+      }
     }
   });
 
-  // 6. Manejo del Formulario de Contacto (Envío a silsaki@gmail.com con FormSubmit)
+  // Manejo del Formulario de Contacto (Envío a silsaki@gmail.com con FormSubmit)
   const contactForm = document.getElementById('contact-form');
   const formFeedback = document.getElementById('form-feedback');
   const btnSubmit = document.getElementById('btn-submit');
   const btnSubmitText = document.getElementById('btn-submit-text');
 
   if (contactForm && formFeedback) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.onsubmit = async (e) => {
       e.preventDefault();
       
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
 
       if (!name || !email || !message) return;
 
-      // Estado de carga en el botón
-      btnSubmit.disabled = true;
+      if (btnSubmit) btnSubmit.disabled = true;
       const sendingText = translations[currentLang].form_btn_sending || "Enviando...";
       if (btnSubmitText) btnSubmitText.textContent = sendingText;
       formFeedback.style.display = 'none';
 
       try {
-        // Envío AJAX gratuito directo a silsaki@gmail.com mediante FormSubmit
         const response = await fetch("https://formsubmit.co/ajax/silsaki@gmail.com", {
           method: "POST",
           headers: {
@@ -412,7 +432,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         console.warn("Fallo envío AJAX directo, ofreciendo alternativa mailto:", err);
-        // Fallback elegante que no pierde los datos del usuario
         const subject = encodeURIComponent(`Contacto Web Silsaki: ${name}`);
         const body = encodeURIComponent(`Hola Silvana,\n\nMi nombre es: ${name} (${email})\n\nMensaje:\n${message}\n\nEnviado desde silsaki.com`);
         const mailtoUrl = `mailto:silsaki@gmail.com?subject=${subject}&body=${body}`;
@@ -421,11 +440,18 @@ document.addEventListener('DOMContentLoaded', () => {
         formFeedback.innerHTML = `${translations[currentLang].form_error} <br><br><a href="${mailtoUrl}" class="btn btn-secondary" style="display:inline-block; margin-top:0.5rem; padding:0.4rem 1rem; font-size:0.85rem;">Abrir en tu Cliente de Correo</a>`;
         formFeedback.style.display = 'block';
       } finally {
-        btnSubmit.disabled = false;
+        if (btnSubmit) btnSubmit.disabled = false;
         if (btnSubmitText) {
           btnSubmitText.textContent = translations[currentLang].form_btn_submit || "Enviar Mensaje";
         }
       }
-    });
+    };
   }
-});
+}
+
+// Ejecutar tan pronto el script se evalúe o en DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSilsaki);
+} else {
+  initSilsaki();
+}

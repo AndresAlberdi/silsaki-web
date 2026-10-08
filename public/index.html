@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261008c">
   <link rel="icon" type="image/jpeg" href="assets/images/silvana_profile.jpg">
 </head>
 <body>
@@ -43,31 +43,35 @@
       </nav>
 
       <div class="nav-controls">
-        <!-- Language Switcher -->
-        <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Idioma / Language">
-          <button type="button" class="lang-btn active" data-lang="es" id="btn-lang-es" title="Cambiar a Español">ES</button>
-          <span class="lang-divider">|</span>
-          <button type="button" class="lang-btn" data-lang="en" id="btn-lang-en" title="Switch to English">EN</button>
+        <!-- Selector Ejecutivo de Idioma (ES / EN) -->
+        <div class="lang-pill" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-opt active" data-lang="es" id="btn-lang-es" onclick="window.silsakiSetLanguage('es')" title="Español">ES</button>
+          <button type="button" class="lang-opt" data-lang="en" id="btn-lang-en" onclick="window.silsakiSetLanguage('en')" title="English">EN</button>
         </div>
 
-        <!-- Theme Toggle (Día / Noche) -->
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema día/noche" title="Modo Día / Modo Noche">
+        <!-- Botón Ejecutivo de Tema (Día / Noche) -->
+        <button type="button" class="theme-btn" id="theme-toggle" onclick="window.silsakiToggleTheme()" aria-label="Cambiar tema día/noche" title="Modo Día / Modo Noche">
           <!-- Sol (para pasar a Modo Día) -->
-          <svg class="theme-icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
+          <span class="theme-btn-icon icon-sun">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
           <!-- Luna (para pasar a Modo Noche) -->
-          <svg class="theme-icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+          <span class="theme-btn-icon icon-moon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+          <span class="theme-btn-label" id="theme-btn-label">Modo Día</span>
         </button>
 
         <!-- Mobile hamburger -->
@@ -513,6 +517,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261008c"></script>
 </body>
 </html>
