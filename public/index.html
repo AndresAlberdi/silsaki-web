@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title id="page-title">Silvana Sasaki | Ingeniera Comercial & Consultoría de Negocios</title>
+  <meta name="description" id="page-description" content="Sitio profesional de Silvana Sasaki. Más de 20 años de experiencia en Estrategia Comercial, Transformación Digital, Fintech y Expansión Regional.">
+  <meta name="keywords" content="Silvana Sasaki, Ingeniera Comercial, Consultoría de Negocios, Transformación Digital, Fintech, Bolivia, Perú, Ventas B2B">
+  <meta name="author" content="Silvana Sasaki">
+  
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.silsaki.com/">
+  <meta property="og:title" id="og-title" content="Silvana Sasaki | Ingeniera Comercial & Consultoría">
+  <meta property="og:description" id="og-desc" content="Más de 20 años de experiencia en desarrollo de negocios, Fintech, transformación digital y expansión comercial.">
+  <meta property="og:image" content="assets/images/silvana_profile.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/silvana_profile.jpg">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" id="brand-logo">
+        <span class="logo-accent">SILVANA</span> SASAKI
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#experiencia" class="nav-link" data-i18n="nav_experience">Experiencia</a></li>
+          <li><a href="#formacion" class="nav-link" data-i18n="nav_education">Formación</a></li>
+          <li><a href="#conocimientos" class="nav-link" data-i18n="nav_knowledge">Conocimientos</a></li>
+          <li><a href="#habilidades" class="nav-link" data-i18n="nav_tools">Herramientas</a></li>
+          <li><a href="#servicios" class="nav-link" data-i18n="nav_services">Servicios</a></li>
+          <li><a href="#contacto" class="btn btn-nav" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-controls">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-btn active" data-lang="es" id="btn-lang-es" title="Cambiar a Español">ES</button>
+          <span class="lang-divider">|</span>
+          <button type="button" class="lang-btn" data-lang="en" id="btn-lang-en" title="Switch to English">EN</button>
+        </div>
+
+        <!-- Theme Toggle (Día / Noche) -->
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema día/noche" title="Modo Día / Modo Noche">
+          <!-- Sol (para pasar a Modo Día) -->
+          <svg class="theme-icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Luna (para pasar a Modo Noche) -->
+          <svg class="theme-icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile hamburger -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú de navegación">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span> <span data-i18n="hero_badge">Disponible para Consultoría y Proyectos</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-i18n="hero_greeting">¡Hola! Soy</span> <span class="highlight-text">Silvana Sasaki</span>
+        </h1>
+        <p class="hero-role" data-i18n="hero_role">Ingeniera Comercial | Estratega B2B | Consultora Regional</p>
+        <p class="hero-description" data-i18n="hero_description">
+          Bienvenido a mi sitio personal. Cuento con más de 20 años de trayectoria impulsando el crecimiento empresarial, la apertura de mercados en Bolivia y Perú, la adopción de fintechs y la aceleración digital de compañías líderes.
+        </p>
+        
+        <div class="hero-cta-group">
+          <a href="#contacto" class="btn btn-primary" id="btn-hero-contact" data-i18n="hero_btn_contact">Iniciar Conversación</a>
+          <a href="#experiencia" class="btn btn-secondary" id="btn-hero-exp" data-i18n="hero_btn_exp">Ver Trayectoria</a>
+        </div>
+
+        <div class="quick-contact-pills">
+          <a href="tel:+59170661250" class="pill-item">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            +591 70661250
+          </a>
+          <a href="mailto:silsaki@gmail.com" class="pill-item">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            silsaki@gmail.com
+          </a>
+          <span class="pill-item pill-static">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span data-i18n="hero_location">La Paz, Bolivia</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="photo-wrapper">
+          <div class="photo-glow"></div>
+          <img src="assets/images/silvana_profile.jpg" alt="Silvana Sasaki" class="profile-photo" id="profile-img">
+          <div class="experience-card">
+            <span class="exp-number" data-i18n="hero_exp_years">+20</span>
+            <span class="exp-text" data-i18n="hero_exp_text">Años de experiencia gerencial y comercial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiencia Laboral -->
+  <section class="section experience-section" id="experiencia">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="exp_tag">Trayectoria Profesional</span>
+        <h2 class="section-title" data-i18n="exp_title">Experiencia Laboral</h2>
+        <p class="section-subtitle" data-i18n="exp_subtitle">Liderando la expansión de negocios, filiales internacionales y gestión comercial estratégica.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Vigatec -->
+        <article class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content card-interactive">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-period" data-i18n="exp1_period">2017 — Actualmente</span>
+                <h3 class="timeline-role" data-i18n="exp1_role">Gerente Comercial Bolivia y Perú</h3>
+                <h4 class="timeline-company"><a href="http://www.vigatec.com" target="_blank" rel="noopener noreferrer">VIGATEC ↗</a></h4>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <p class="timeline-summary" data-i18n="exp1_summary">
+                Consolidación y posicionamiento de la empresa en Bolivia y Perú como filiales operativas de su casa matriz.
+              </p>
+              <h5 class="subheading" data-i18n="exp1_solutions_heading">Líneas de Solución y Negocio:</h5>
+              <div class="skills-tags">
+                <span class="tag" data-i18n="exp1_tag1">Autoservicio & UX</span>
+                <span class="tag" data-i18n="exp1_tag2">Medios de Pago</span>
+                <span class="tag" data-i18n="exp1_tag3">Medio Ambiente</span>
+                <span class="tag" data-i18n="exp1_tag4">Parking Inteligente</span>
+                <span class="tag" data-i18n="exp1_tag5">Procesos Industriales & Logística</span>
+                <span class="tag" data-i18n="exp1_tag6">Tarjetas y Procesos</span>
+                <span class="tag" data-i18n="exp1_tag7">Gestión de Asistencia & Presencia</span>
+              </div>
+              <h5 class="subheading" style="margin-top: 1rem;" data-i18n="exp1_activities_heading">Actividades Clave:</h5>
+              <ul class="bullet-list">
+                <li data-i18n="exp1_bullet1">Prospección, venta de alta tecnología y seguimiento estratégico de punta a punta hasta el cierre comercial.</li>
+                <li data-i18n="exp1_bullet2">Supervisión de postventa, calidad de servicio y soporte técnico hacia clientes corporativos.</li>
+                <li data-i18n="exp1_bullet3">Coordinación de propuestas técnicas y comerciales con las distintas divisiones de Casa Matriz.</li>
+                <li data-i18n="exp1_bullet4">Alianzas estratégicas comerciales con corporaciones e importación de equipamiento de alta tecnología.</li>
+                <li data-i18n="exp1_bullet5">Supervisión integral de las filiales: administración, finanzas, contabilidad, soporte y área legal.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Síntesis -->
+        <article class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content card-interactive">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-period">2011 — 2017</span>
+                <h3 class="timeline-role" data-i18n="exp2_role">Gerente de Unidad de Negocios / Responsable de Canales & Marketing</h3>
+                <h4 class="timeline-company"><a href="http://www.sintesis.com.bo" target="_blank" rel="noopener noreferrer">SÍNTESIS S.A. ↗</a></h4>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <p class="timeline-summary" data-i18n="exp2_summary">
+                Liderazgo en gestión comercial, alianzas de canales y mercadeo corporativo en una de las empresas de procesamiento financiero y de pagos más importantes del país.
+              </p>
+              <div class="skills-tags">
+                <span class="tag" data-i18n="exp2_tag1">Fintech</span>
+                <span class="tag" data-i18n="exp2_tag2">Gestión de Canales</span>
+                <span class="tag" data-i18n="exp2_tag3">Marketing B2B</span>
+                <span class="tag" data-i18n="exp2_tag4">Crecimiento Comercial</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Funda-Pro -->
+        <article class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content card-interactive">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-period">2006 — 2010</span>
+                <h3 class="timeline-role" data-i18n="exp3_role">Coordinadora de Inversiones / Red de Inversionistas Ángeles</h3>
+                <h4 class="timeline-company"><a href="http://www.fundapro.org.bo" target="_blank" rel="noopener noreferrer">FUNDA-PRÓ ↗</a></h4>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <p class="timeline-summary" data-i18n="exp3_summary">
+                Gestión, evaluación y articulación de fondos de capital semilla e impulso a redes de inversión ángel para proyectos de emprendimiento y desarrollo productivo.
+              </p>
+              <div class="skills-tags">
+                <span class="tag" data-i18n="exp3_tag1">Inversión Ángel</span>
+                <span class="tag" data-i18n="exp3_tag2">Capital Semilla</span>
+                <span class="tag" data-i18n="exp3_tag3">Evaluación de Proyectos</span>
+                <span class="tag" data-i18n="exp3_tag4">Startups</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formación Académica -->
+  <section class="section education-section" id="formacion">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="edu_tag">Perfil Académico</span>
+        <h2 class="section-title" data-i18n="edu_title">Formación y Postgrados</h2>
+        <p class="section-subtitle" data-i18n="edu_subtitle">Bases académicas internacionales enfocadas en dirección y desarrollo de negocios globales.</p>
+      </div>
+
+      <div class="education-grid">
+        <div class="edu-card card-interactive">
+          <div class="edu-icon">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+            </svg>
+          </div>
+          <span class="edu-year">2010 — 2011</span>
+          <h3 class="edu-degree" data-i18n="edu1_degree">Máster en Dirección y Gestión de Empresas Internacionales</h3>
+          <p class="edu-institution" data-i18n="edu1_inst">Universidad Autónoma de Barcelona (España)</p>
+          <p class="edu-desc" data-i18n="edu1_desc">Enfoque en internacionalización de mercados, alianzas transfronterizas y estrategia competitiva global.</p>
+        </div>
+
+        <div class="edu-card card-interactive">
+          <div class="edu-icon">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <span class="edu-year">2002 — 2007</span>
+          <h3 class="edu-degree" data-i18n="edu2_degree">Licenciatura en Ingeniería Comercial</h3>
+          <p class="edu-institution" data-i18n="edu2_inst">Universidad Católica Boliviana "San Pablo"</p>
+          <p class="edu-desc" data-i18n="edu2_desc">Especialización en formulación de planes comerciales, finanzas empresariales y modelos de negocio de alto impacto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas de Conocimiento -->
+  <section class="section knowledge-section" id="conocimientos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="know_tag">Competencias</span>
+        <h2 class="section-title" data-i18n="know_title">Áreas de Conocimiento</h2>
+        <p class="section-subtitle" data-i18n="know_subtitle">Pilares estratégicos consolidados en 2 décadas de experiencia práctica.</p>
+      </div>
+
+      <div class="knowledge-grid">
+        <div class="knowledge-card card-interactive">
+          <div class="card-num">01</div>
+          <h3 class="card-heading" data-i18n="know1_title">Venta Consultiva B2B</h3>
+          <p class="card-detail" data-i18n="know1_desc">Diseño de propuestas técnicas de alto valor, mapeo de tomadores de decisión y negociación compleja en corporaciones.</p>
+        </div>
+
+        <div class="knowledge-card card-interactive">
+          <div class="card-num">02</div>
+          <h3 class="card-heading" data-i18n="know2_title">Transformación Digital</h3>
+          <p class="card-detail" data-i18n="know2_desc">Modernización de procesos operativos, adopción de herramientas en la nube y optimización de la experiencia de clientes.</p>
+        </div>
+
+        <div class="knowledge-card card-interactive">
+          <div class="card-num">03</div>
+          <h3 class="card-heading" data-i18n="know3_title">IA en los Negocios</h3>
+          <p class="card-detail" data-i18n="know3_desc">Aplicación pragmática de inteligencia artificial para eficiencias operativas, prospección inteligente y toma de decisiones.</p>
+        </div>
+
+        <div class="knowledge-card card-interactive">
+          <div class="card-num">04</div>
+          <h3 class="card-heading" data-i18n="know4_title">Medios de Pago & Fintech</h3>
+          <p class="card-detail" data-i18n="know4_desc">Ecosistemas transaccionales, pasarelas de pago, procesamiento de tarjetas y soluciones omnicanal de cobro.</p>
+        </div>
+
+        <div class="knowledge-card card-interactive">
+          <div class="card-num">05</div>
+          <h3 class="card-heading" data-i18n="know5_title">Startups & Emprendimiento</h3>
+          <p class="card-detail" data-i18n="know5_desc">Modelado de negocios, estructuración de propuestas de valor y validación comercial para iniciativas tecnológicas emergentes.</p>
+        </div>
+
+        <div class="knowledge-card card-interactive">
+          <div class="card-num">06</div>
+          <h3 class="card-heading" data-i18n="know6_title">Financiamiento a Emprendedores</h3>
+          <p class="card-detail" data-i18n="know6_desc">Estrategias de fondeo, conexión con inversionistas ángel, preparación de pitch decks y estructuración financiera inicial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Herramientas y Habilidades -->
+  <section class="section tools-section" id="habilidades">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="tools_tag">Herramientas & Ecosistema</span>
+        <h2 class="section-title" data-i18n="tools_title">Dominio Tecnológico</h2>
+        <p class="section-subtitle" data-i18n="tools_subtitle">Herramientas empresariales y de analítica que potencian la ejecución gerencial.</p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-badge-card">
+          <img src="assets/images/skill_sap.jpg" alt="SAP ERP" class="tool-img">
+          <h4>SAP ERP</h4>
+          <p data-i18n="tool1_desc">Gestión corporativa y procesos de negocio</p>
+        </div>
+
+        <div class="tool-badge-card">
+          <img src="assets/images/skill_bi.jpg" alt="Power BI" class="tool-img">
+          <h4>Power BI</h4>
+          <p data-i18n="tool2_desc">Analítica de datos y dashboards comerciales</p>
+        </div>
+
+        <div class="tool-badge-card">
+          <img src="assets/images/skill_ai.jpg" alt="Inteligencia Artificial" class="tool-img">
+          <h4 data-i18n="tool3_title">Inteligencia Artificial</h4>
+          <p data-i18n="tool3_desc">Productividad empresarial y automatización</p>
+        </div>
+
+        <div class="tool-badge-card">
+          <img src="assets/images/skill_google.jpg" alt="Google Workspace" class="tool-img">
+          <h4>Google Workspace</h4>
+          <p data-i18n="tool4_desc">Colaboración en la nube e interoperabilidad</p>
+        </div>
+
+        <div class="tool-badge-card">
+          <img src="assets/images/skill_m365.jpg" alt="Microsoft 365" class="tool-img">
+          <h4>Microsoft 365</h4>
+          <p data-i18n="tool5_desc">Productividad corporativa y gestión de equipos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios: ¿Cómo puedo ayudarte? -->
+  <section class="section services-section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="serv_tag">Propuesta de Valor</span>
+        <h2 class="section-title" data-i18n="serv_title">¿Cómo Puedo Ayudarte?</h2>
+        <p class="section-subtitle" data-i18n="serv_subtitle">Servicios de consultoría, asesoría gerencial y aceleración comercial personalizados.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-box card-interactive">
+          <div class="service-icon-wrap">🚀</div>
+          <h3 data-i18n="serv1_title">Estrategia Comercial & Expansión Regional</h3>
+          <p data-i18n="serv1_desc">Acompañamiento integral para ingresar a nuevos mercados (Bolivia y Perú), apertura de canales de distribución y posicionamiento de filiales.</p>
+        </div>
+
+        <div class="service-box card-interactive">
+          <div class="service-icon-wrap">🌐</div>
+          <h3 data-i18n="serv2_title">Consultoría en eCommerce & Transformación Digital</h3>
+          <p data-i18n="serv2_desc">Estrategia 360 para implementar modelos transaccionales digitales, pasarelas de pago y automatización de la experiencia del consumidor.</p>
+        </div>
+
+        <div class="service-box card-interactive">
+          <div class="service-icon-wrap">💼</div>
+          <h3 data-i18n="serv3_title">Ventas B2B & Soluciones Tecnológicas</h3>
+          <p data-i18n="serv3_desc">Especialista en estructuración de pipelines comerciales consultivos, capacitación de fuerzas de venta y cierre de cuentas clave corporativas.</p>
+        </div>
+
+        <div class="service-box card-interactive">
+          <div class="service-icon-wrap">📈</div>
+          <h3 data-i18n="serv4_title">Asesoramiento y Fondeo para Startups</h3>
+          <p data-i18n="serv4_desc">Business modeling para emprendedores tecnológicos, estructuración de gobernanza y búsqueda activa de capital semilla e inversión ángel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="section contact-section" id="contacto">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <span class="section-tag" data-i18n="contact_tag">Conectemos</span>
+          <h2 class="section-title" data-i18n="contact_title">Hablemos de tu Próximo Proyecto</h2>
+          <p class="contact-lead" data-i18n="contact_lead">
+            ¿Buscas acelerar tus ventas, transformar digitalmente tu empresa o expandir tus operaciones en la región? Escríbeme directamente.
+          </p>
+
+          <div class="contact-details">
+            <div class="detail-row">
+              <div class="detail-icon">
+                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <strong data-i18n="contact_phone_label">Teléfono / WhatsApp:</strong>
+                <a href="https://wa.me/59170661250" target="_blank" rel="noopener noreferrer">+591 70661250</a>
+              </div>
+            </div>
+
+            <div class="detail-row">
+              <div class="detail-icon">
+                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <strong data-i18n="contact_email_label">Correo Electrónico:</strong>
+                <a href="mailto:silsaki@gmail.com">silsaki@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="detail-row">
+              <div class="detail-icon">
+                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                  <circle cx="4" cy="4" r="2" stroke-width="2"/>
+                </svg>
+              </div>
+              <div>
+                <strong data-i18n="contact_profile_label">Perfil Profesional:</strong>
+                <a href="https://www.linkedin.com/in/silvanasasaki/" target="_blank" rel="noopener noreferrer">linkedin.com/in/silvanasasaki ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form id="contact-form" class="contact-form">
+            <h3 class="form-title" data-i18n="form_title">Envíame un mensaje</h3>
+            <div class="form-group">
+              <label for="name" data-i18n="form_name_label">Nombre completo</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre o empresa" data-i18n-placeholder="form_name_ph">
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="form_email_label">Correo Electrónico</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com" data-i18n-placeholder="form_email_ph">
+            </div>
+            <div class="form-group">
+              <label for="message" data-i18n="form_msg_label">Mensaje o Consulta</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Describe brevemente tu interés o proyecto..." data-i18n-placeholder="form_msg_ph"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" id="btn-submit">
+              <span id="btn-submit-text" data-i18n="form_btn_submit">Enviar Mensaje</span>
+            </button>
+            <div id="form-feedback" class="form-feedback" style="display: none;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-logo">SILVANA SASAKI</span>
+        <p data-i18n="footer_rights">© 2026 Silvana Sasaki. Todos los derechos reservados.</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/silvanasasaki/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+        <a href="mailto:silsaki@gmail.com" class="social-link" title="Email">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+        <a href="https://wa.me/59170661250" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
